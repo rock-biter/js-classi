@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+  <header class="bg-gray-900 py-12 ">
+
+    <div class="container mx-auto text-white relative flex justify-center">
+      <h1 class="text-2xl text-center flex-grow">PC Shop</h1>
+
+
+      <div id="cart" class="cart absolute">
+
+        <span class="total">0.00 &euro;</span>
+  
+        <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+        </svg>
+  
+        <ul class="products-list grid grid-cols-1 gap-3">
+          -- Empty --
+          <!-- <li class="cart-product">
+            <img class="w-8 h-8 object-cover object-center" src="img/monitor.jpg" alt="">
+            monitor <span class="price">156.36 &euro;</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </li> -->
+          
+        </ul>
+      </div>
+    </div>
+
+    
+
+
+  </header>
+
+  <main class="py-24">
+    <div class="container mx-auto">
+      <div class="card-wrapper gap-8 lg:gap-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      
+      </div>
+    </div>
+    <div class="container mx-auto py-12">
+      <button id="paga" class="bg-blue-600 py-2 px-6 text-white rounded-lg w-full">Paga</button>
+    </div>
+  </main>
+  
+  
+
+  <script src="js/app.js" type="module"></script>
+  
+</body>
+</html>

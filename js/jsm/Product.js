@@ -1,5 +1,7 @@
 export default class Product {
 
+  static instanceCount = 0
+
   /**
    * 
    * @param {string} name 
@@ -12,10 +14,14 @@ export default class Product {
     this.description = description
     this.price = price
     this.image = image
+    this.id = ++Product.instanceCount
 
     this.createDomElement();
   }
 
+  /**
+   * create product card dom element
+   */
   createDomElement() {
 
     this.domElement = document.createElement('div');
@@ -39,6 +45,12 @@ export default class Product {
       window.dispatchEvent( addToCartEvent, )
 
     })
+
+  }
+
+  static clone( { name, price, description, image } ) {
+
+    return new this(name,description,price,image)
 
   }
 

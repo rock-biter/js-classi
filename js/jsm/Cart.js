@@ -1,7 +1,9 @@
+import Product from './Product.js'
+
 export default class Cart {
 
   products = []
-  total = 0
+  #total = 0
 
   /**
    * 
@@ -28,12 +30,12 @@ export default class Cart {
       this.domElement.querySelector('.products-list').innerHTML = ''
     }
 
-    const cartProduct = {...product}
+    const cartProduct = Product.clone( product )
     console.log('cart product',cartProduct)
 
     this.products.push( cartProduct )
 
-    this.total += product.price;
+    this.#total += product.price;
 
     this.render()
 
@@ -51,13 +53,13 @@ export default class Cart {
       this.products.splice(i,1)
     }
 
-    this.total -= product.price
+    this.#total -= product.price
 
     this.render()
   }
 
   getTotal() {
-    return this.total
+    return this.#total
   }
 
   printTotal() {
@@ -96,7 +98,7 @@ export default class Cart {
 
   empty() {
     this.products = []
-    this.total = 0
+    this.#total = 0
     
     this.render()
     
